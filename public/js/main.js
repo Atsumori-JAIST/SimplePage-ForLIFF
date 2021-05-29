@@ -1,34 +1,47 @@
 const app = new Vue({
     el: '#app',
     vuetify: new Vuetify(),
-    /*
+
     data: {
-        selectedState: -1,
+        statusGroup: -1,
         status: [
-            { value: -1, label: 'すべて' },
-            { value:  0, label: '作業中' },
-            { value:  1, label: '完了'   },
+            { value: -1, label: 'A' },
+            { value:  0, label: 'B' },
+            { value:  1, label: 'C'   },
         ],
-        headers: [
-            { text: 'Task',  value: 'task' },
-            { text: 'Progress', value: 'progress' },
+        valid: true,
+        name: '',
+        nameRules: [
+            v => !!v || 'Name is required',
+            v => (v && v.length <= 10) || 'Name must be less than 10 characters',
         ],
-        todos: [
-            { progress: 0, task: '買い物' },
-            { progress: 1, task: 'アルゴリズム課題' },
-            { progress: 0, task: '筋トレ' },
-        ]
+        email: '',
+        emailRules: [
+            v => !!v || 'E-mail is required',
+            v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
+        ],
+        select: null,
+        items: [
+        'Item 1',
+        'Item 2',
+        'Item 3',
+        'Item 4',
+        ],
+        checkbox: false,
     },
 
     computed: {
     },
 
     methods: {
-        getColor(progress) {
-            if (progress == 0) return 'light-blue darken-1';
-            else if (progress == 1) return 'red darken-4';
-            else return 'blue-grey darken-3';
-        }
+        validate () {
+            this.$refs.form.validate()
+        },
+        reset () {
+            this.$refs.form.reset()
+        },
+        resetValidation () {
+            this.$refs.form.resetValidation()
+        },
     },
-    */
 })
