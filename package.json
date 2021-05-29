@@ -1,0 +1,20 @@
+{
+  "name": "simple-screen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Atsumori-JAIST/SimplePage-ForLIFE.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Atsumori-JAIST/SimplePage-ForLIFE/issues"
+  },
+  "homepage": "https://github.com/Atsumori-JAIST/SimplePage-ForLIFE#readme"
+}
