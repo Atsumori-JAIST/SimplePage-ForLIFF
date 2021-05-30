@@ -3,20 +3,13 @@ const app = new Vue({
     vuetify: new Vuetify(),
 
     data: {
-        qGroup: 0,
-        question: [
-            { text: '内定式の出欠について 回答ください' },
-            { text: '内定式の感想について 回答ください' },
-            { text: '独身寮への入寮を希望しますか' },
-            { text: '新人研修座談会（入社前研修）への出欠について回答ください' },
-            { text: '災害情報について' },
-        ],
-        answer: [
-            { value: false },
-            { value: false },
-            { value: false },
-            { value: false },
-            { value: false },
+        qaGroup: 0,
+        qa: [
+            { value: false , text: '内定式の出欠について 回答ください' },
+            { value: false , text: '内定式の感想について 回答ください' },
+            { value: false , text: '独身寮への入寮を希望しますか' },
+            { value: false , text: '新人研修座談会（入社前研修）への出欠について回答ください' },
+            { value: false , text: '災害情報について' },
         ],
     },
 
@@ -27,7 +20,7 @@ const app = new Vue({
         postAns () {
             fetch('https://testforlife.herokuapp.com/', {
                 method: 'post',
-                body: JSON.stringify(this.answer)
+                body: JSON.stringify(this.qa)
             })
             .then(response => {
                 console.log(response);
