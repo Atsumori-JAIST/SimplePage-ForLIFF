@@ -47,6 +47,7 @@ const app = new Vue({
             }
             */
             
+            /*
             fetch('https://first-project-9474-dev.twil.io/defalut_question', {
                 method: 'post',
                 //body: JSON.stringify(this.qas)
@@ -55,8 +56,9 @@ const app = new Vue({
             .then(response => {
                 console.log(response);
             })
+            */
             
-            //axios.post('https://first-project-9474-dev.twil.io/defalut_question', postdata);
+            axios.post('https://first-project-9474-dev.twil.io/defalut_question', postdata);
         },
     },
 })
