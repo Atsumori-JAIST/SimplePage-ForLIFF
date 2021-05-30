@@ -56,7 +56,6 @@ http.createServer(function (request, response) {
         request.on('data', function(chunk) { data += chunk })
             .on('end', function() {
                 //console.log(data);
-                setFullfill(false);
                 axios.post(dburl,
                     {
                         "app": 3,
