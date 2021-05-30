@@ -27,7 +27,7 @@ const app = new Vue({
         postAns () {
             fetch('https://testforlife.herokuapp.com/', {
                 method: 'post',
-                body: this.answer
+                body: JSON.stringify(this.answer)
             })
             .then(response => {
                 console.log(response);
