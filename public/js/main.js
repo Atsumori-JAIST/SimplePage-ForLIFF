@@ -3,45 +3,35 @@ const app = new Vue({
     vuetify: new Vuetify(),
 
     data: {
-        statusGroup: -1,
-        status: [
-            { value: -1, label: 'A' },
-            { value:  0, label: 'B' },
-            { value:  1, label: 'C'   },
+        qGroup: 0,
+        question: [
+            { text: '内定式の出欠について 回答ください' },
+            { text: '内定式の感想について 回答ください' },
+            { text: '独身寮への入寮を希望しますか' },
+            { text: '新人研修座談会（入社前研修）への出欠について回答ください' },
+            { text: '災害情報について' },
         ],
-        valid: true,
-        name: '',
-        nameRules: [
-            v => !!v || 'Name is required',
-            v => (v && v.length <= 10) || 'Name must be less than 10 characters',
+        answer: [
+            { value: false },
+            { value: false },
+            { value: false },
+            { value: false },
+            { value: false },
         ],
-        email: '',
-        emailRules: [
-            v => !!v || 'E-mail is required',
-            v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
-        ],
-        select: null,
-        items: [
-        'Item 1',
-        'Item 2',
-        'Item 3',
-        'Item 4',
-        ],
-        checkbox: false,
     },
 
     computed: {
     },
 
     methods: {
-        validate () {
-            this.$refs.form.validate()
-        },
-        reset () {
-            this.$refs.form.reset()
-        },
-        resetValidation () {
-            this.$refs.form.resetValidation()
+        postAns () {
+            fetch('https://testforlife.herokuapp.com/', {
+                method: 'post',
+                body: this.answer
+            })
+            .then(response => {
+                console.log(response);
+            })
         },
     },
 })
