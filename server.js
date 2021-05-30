@@ -50,4 +50,12 @@ http.createServer(function (request, response) {
         }
     });
 
+    if (request.method === 'POST'){
+        var data = '';
+        request.on('data', function(chunk) { data += chunk })
+            .on('end', function() {
+                console.log(data);
+            })
+    }
+
 }).listen(process.env.PORT);
