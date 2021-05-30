@@ -55,7 +55,8 @@ http.createServer(function (request, response) {
         const dburl = 'https://first-project-9474-dev.twil.io/hello-world';
         request.on('data', function(chunk) { data += chunk })
             .on('end', function() {
-                //console.log(data);
+                console.log(data);
+                /*
                 axios.post(dburl,
                     {
                         "app": 3,
@@ -68,6 +69,7 @@ http.createServer(function (request, response) {
                                 }
                             }
                     })
+                */
             })
     }
 
