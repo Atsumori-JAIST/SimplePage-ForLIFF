@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Atsumori-JAIST/SimplePage-ForLIFE/issues"
   },
-  "homepage": "https://github.com/Atsumori-JAIST/SimplePage-ForLIFE#readme"
+  "homepage": "https://github.com/Atsumori-JAIST/SimplePage-ForLIFE#readme",
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
 }
