@@ -55,6 +55,8 @@ http.createServer(function (request, response) {
         request.on('data', function(chunk) { data += chunk })
             .on('end', function() {
                 console.log(data);
+                console.log(data[0]);
+                console.log(data[1]);
             })
     }
 
