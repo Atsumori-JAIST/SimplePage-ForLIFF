@@ -8,10 +8,6 @@ http.createServer(function (request, response) {
     var filePath = '.' + request.url;
     if (filePath == './') {
         filePath = './index.html';
-    } else if (filePath == './admin') {
-        filePath = './admin.html';
-    } else {
-        filePath = './index.html';
     }
 
     var extname = String(path.extname(filePath)).toLowerCase();
