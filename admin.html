@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport', content='width=device-width, initial-scale=1.0'>
+        <title>Node.js Express Application</title>
+        <link rel='stylesheet', href='https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css'>
+        <link rel='stylesheet', href='https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css'>
+        <link rel='stylesheet', href='https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css'>
+        <meta name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui'>
+        <script src='https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js', defer></script>
+        <script src='https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js', defer></script>
+        <script src='./public/js/main.js', defer></script>
+
+    <body>
+        <div id="app">
+            <v-app>
+
+                <v-app-bar app>
+                    <v-app-bar-nav-icon></v-app-bar-nav-icon>
+                    <v-icon color="green">mdi-vuejs</v-icon>
+                    <v-icon color="primary">mdi-vuetify</v-icon>
+                    <v-toolbar-title>!!!Admin!!! Sample Page</v-toolbar-title>
+                </v-app-bar>
+
+                <v-main>
+
+                    <v-container>
+                        <span>TEST</span>
+                    </v-container>
+
+                    <v-container>
+                        <v-radio-group v-model="statusGroup">
+                            <v-radio
+                                v-for="(state, i) in status"
+                                :key="i"
+                                :value="state.value"
+                                :label="state.label"
+                            ></v-radio>
+                        </v-radio-group>
+                    </v-container>
+
+                    <v-container>
+                        <v-form
+                            ref="form"
+                            v-model="valid"
+                            lazy-validation
+                        >
+                       <v-text-field
+                            v-model="name"
+                            :counter="10"
+                            :rules="nameRules"
+                            label="Name"
+                            required
+                        ></v-text-field>
+
+                        <v-text-field
+                            v-model="email"
+                            :rules="emailRules"
+                            label="E-mail"
+                            required
+                        ></v-text-field>
+
+                        <v-select
+                            v-model="select"
+                            :items="items"
+                            :rules="[v => !!v || 'Item is required']"
+                            label="Item"
+                            required
+                        ></v-select>
+
+                        <v-checkbox
+                            v-model="checkbox"
+                            :rules="[v => !!v || 'You must agree to continue!']"
+                            label="Do you agree?"
+                            required
+                        ></v-checkbox>
+
+                        <v-btn
+                            :disabled="!valid"
+                            color="success"
+                            class="mr-4"
+                            @click="validate"
+                        >
+                            Validate
+                        </v-btn>
+
+                        <v-btn
+                            color="error"
+                            class="mr-4"
+                            @click="reset"
+                        >
+                            Reset Form
+                        </v-btn>
+
+                        <v-btn
+                            color="warning"
+                            @click="resetValidation"
+                        >
+                            Reset Validation
+                        </v-btn>
+                        </v-form>
+                    </v-container>
+
+                </v-main>
+
+            </v-app>
+        </div>
+    </body>
