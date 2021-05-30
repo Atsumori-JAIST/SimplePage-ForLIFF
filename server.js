@@ -52,24 +52,9 @@ http.createServer(function (request, response) {
 
     if (request.method === 'POST'){
         var data = '';
-        const dburl = 'https://first-project-9474-dev.twil.io/hello-world';
         request.on('data', function(chunk) { data += chunk })
             .on('end', function() {
                 console.log(data);
-                /*
-                axios.post(dburl,
-                    {
-                        "app": 3,
-                            "record": {
-                                "question": {
-                                    "value": "Question Test"
-                                },
-                                "answer": {
-                                    "value": "Answer Test"
-                                }
-                            }
-                    })
-                */
             })
     }
 

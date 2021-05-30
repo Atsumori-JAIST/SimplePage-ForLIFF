@@ -22,82 +22,24 @@
 
                 <v-main>
 
-                    <v-container>
-                        <span>TEST</span>
+                    <v-container fluid>
+                        <v-row align="center">
+                            <v-col cols="6">
+                                <span>質問1</span>
+                            </v-col>
+                            <v-col cols="6">
+                                <v-select
+                                    v-model="setq"
+                                    menu-props="auto"
+                                    label="Select"
+                                    hide-details
+                                    prepend-icon="mdi-q"
+                                    single-line
+                                ></v-select>
+                            </v-col>
+                        </v-row>
                     </v-container>
 
-                    <v-container>
-                        <v-radio-group v-model="statusGroup">
-                            <v-radio
-                                v-for="(state, i) in status"
-                                :key="i"
-                                :value="state.value"
-                                :label="state.label"
-                            ></v-radio>
-                        </v-radio-group>
-                    </v-container>
-
-                    <v-container>
-                        <v-form
-                            ref="form"
-                            v-model="valid"
-                            lazy-validation
-                        >
-                       <v-text-field
-                            v-model="name"
-                            :counter="10"
-                            :rules="nameRules"
-                            label="Name"
-                            required
-                        ></v-text-field>
-
-                        <v-text-field
-                            v-model="email"
-                            :rules="emailRules"
-                            label="E-mail"
-                            required
-                        ></v-text-field>
-
-                        <v-select
-                            v-model="select"
-                            :items="items"
-                            :rules="[v => !!v || 'Item is required']"
-                            label="Item"
-                            required
-                        ></v-select>
-
-                        <v-checkbox
-                            v-model="checkbox"
-                            :rules="[v => !!v || 'You must agree to continue!']"
-                            label="Do you agree?"
-                            required
-                        ></v-checkbox>
-
-                        <v-btn
-                            :disabled="!valid"
-                            color="success"
-                            class="mr-4"
-                            @click="validate"
-                        >
-                            Validate
-                        </v-btn>
-
-                        <v-btn
-                            color="error"
-                            class="mr-4"
-                            @click="reset"
-                        >
-                            Reset Form
-                        </v-btn>
-
-                        <v-btn
-                            color="warning"
-                            @click="resetValidation"
-                        >
-                            Reset Validation
-                        </v-btn>
-                        </v-form>
-                    </v-container>
 
                 </v-main>
 

@@ -11,6 +11,12 @@ const app = new Vue({
             { value: false , text: '新人研修座談会（入社前研修）への出欠について回答ください' },
             { value: false , text: '災害情報について' },
         ],
+        setq: [
+            { text: '質問1' },
+            { text: '質問1' },
+            { text: '質問1' },
+            { text: '質問1' },
+        ],
     },
 
     computed: {
