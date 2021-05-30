@@ -4,7 +4,7 @@ const app = new Vue({
 
     data: {
         qaGroup: 0,
-        qa: [
+        qas: [
             { value: false , text: '内定式の出欠について 回答ください' },
             { value: false , text: '内定式の感想について 回答ください' },
             { value: false , text: '独身寮への入寮を希望しますか' },
@@ -20,7 +20,7 @@ const app = new Vue({
         postAns () {
             fetch('https://testforlife.herokuapp.com/', {
                 method: 'post',
-                body: JSON.stringify(this.qa)
+                body: JSON.stringify(this.qas)
             })
             .then(response => {
                 console.log(response);
