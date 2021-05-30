@@ -6,7 +6,7 @@ const app = new Vue({
         qaGroup: 0,
         qas: [
             { value: false , text: '内定式には出席しましたか' },
-            { value: false , text: '内定式の感想について 回答ください' },
+            { value: "" ,    text: '内定式の感想について 回答ください' },
             { value: false , text: '独身寮への入寮を希望しますか' },
             { value: false , text: '新人研修座談会（入社前研修）への出欠について回答ください' },
         ],
@@ -27,27 +27,23 @@ const app = new Vue({
             let postdata = {
                 "app": 6,
                 "record": {
-                    "aImpressions": {
-                        "value": "入力ああああ"
-                    },
                     "attend": {
-                        "value": 1
+                        "value": (new Number(this.qas[0].value)).valueOf()
+                    },
+                    "aImpressions": {
+                        "value": this.qas[1].value
                     },
                     "dom": {
-                        "value": 0
+                        "value": (new Number(this.qas[2].value)).valueOf()
                     },
                     "attend_for_new_comer": {
-                        "value": 1
+                        "value": (new Number(this.qas[3].value)).valueOf()
                     }
-                }
+                },
+
             };
-            /*-- 時間あったら4つ以上の質問にも対応できるように
-            for (let i=0; i<Object(this.qas).length; i++) {
-                postdata = 
-            }
-            */
             
-            /*
+            /*-- Fetchだめだた(Cross Origin ---)
             fetch('https://first-project-9474-dev.twil.io/defalut_question', {
                 method: 'post',
                 //body: JSON.stringify(this.qas)

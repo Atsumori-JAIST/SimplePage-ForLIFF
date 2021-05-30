@@ -27,11 +27,18 @@
                         :key="i"
                     >
                         <span>{{ qa.text }}</span>
-                        <v-switch
-                            v-model="qa.value"
-                            inset
-                            color="primary"
-                        ></v-switch>
+                        <div v-if="typeof(qa.value) == 'boolean'">
+                            <v-switch
+                                v-model="qa.value"
+                                inset
+                                color="primary"
+                            ></v-switch>
+                        </div>
+                        <div v-else>
+                            <v-text-field
+                                v-model="qa.value"
+                            ></v-text-field>
+                        </div>
                     </v-container>
 
 
